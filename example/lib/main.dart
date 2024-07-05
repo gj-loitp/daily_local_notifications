@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:daily_local_notifications/daily_local_notifications.dart';
 import 'package:flutter/material.dart';
 
@@ -21,33 +19,99 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Daily Local Notifications'),
         ),
-        body: DailyLocalNotifications(
-          notificationConfig: const NotificationConfig(),
-          config: const DailyLocalNotificationsConfig(),
-          stylingConfig: StylingConfig(
-            activeColor: Theme.of(context).primaryColor,
-            inactiveColor: Theme.of(context).primaryColor.withOpacity(0.3),
-            backgroundColor: Theme.of(context).colorScheme.background,
-          ),
-          reminderTitleText: Text(
-            'Reminder Title',
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-          reminderRepeatText: Text(
-            'Repeat',
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          reminderDailyText: Text(
-            'Daily',
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          timeNormalTextStyle: const TextStyle(fontSize: 24, color: Colors.grey),
-          timeSelectedTextStyle: TextStyle(
-            fontSize: 24,
-            color: Theme.of(context).primaryColor,
-            fontWeight: FontWeight.bold,
-          ),
-          onNotificationsUpdated: () => log('Notifications updated'),
+        body: ListView(
+          children: [
+            DailyLocalNotifications(
+              notificationConfig: const NotificationConfig(),
+              config: const DailyLocalNotificationsConfig(),
+              stylingConfig: StylingConfig(
+                activeColor: Theme.of(context).primaryColor,
+                inactiveColor: Theme.of(context).primaryColor.withOpacity(0.3),
+                backgroundColor: Theme.of(context).colorScheme.background,
+              ),
+              reminderTitleText: Text(
+                'Reminder Title',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              reminderRepeatText: Text(
+                'Repeat',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              reminderDailyText: Text(
+                'Daily',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              timeNormalTextStyle: const TextStyle(fontSize: 24, color: Colors.grey),
+              timeSelectedTextStyle: TextStyle(
+                fontSize: 24,
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
+              onNotificationsUpdated: () {
+                debugPrint("roy93~ Notifications updated");
+              },
+            ),
+            DailyLocalNotifications(
+              notificationConfig: const NotificationConfig(),
+              config: const DailyLocalNotificationsConfig(),
+              stylingConfig: StylingConfig(
+                activeColor: Theme.of(context).primaryColor,
+                inactiveColor: Theme.of(context).primaryColor.withOpacity(0.3),
+                backgroundColor: Theme.of(context).colorScheme.background,
+              ),
+              reminderTitleText: Text(
+                'Reminder Title',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              reminderRepeatText: Text(
+                'Repeat',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              reminderDailyText: Text(
+                'Daily',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              timeNormalTextStyle: const TextStyle(fontSize: 24, color: Colors.grey),
+              timeSelectedTextStyle: TextStyle(
+                fontSize: 24,
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
+              onNotificationsUpdated: () {
+                debugPrint("roy93~ Notifications updated");
+              },
+            ),
+            DailyLocalNotifications(
+              notificationConfig: const NotificationConfig(),
+              config: const DailyLocalNotificationsConfig(),
+              stylingConfig: StylingConfig(
+                activeColor: Theme.of(context).primaryColor,
+                inactiveColor: Theme.of(context).primaryColor.withOpacity(0.3),
+                backgroundColor: Theme.of(context).colorScheme.background,
+              ),
+              reminderTitleText: Text(
+                'Reminder Title',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              reminderRepeatText: Text(
+                'Repeat',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              reminderDailyText: Text(
+                'Daily',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              timeNormalTextStyle: const TextStyle(fontSize: 24, color: Colors.grey),
+              timeSelectedTextStyle: TextStyle(
+                fontSize: 24,
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
+              onNotificationsUpdated: () {
+                debugPrint("roy93~ Notifications updated");
+              },
+            )
+          ],
         ),
       ),
     );
