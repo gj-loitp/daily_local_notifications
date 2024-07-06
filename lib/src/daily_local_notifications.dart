@@ -79,6 +79,7 @@ class _DailyLocalNotificationsState extends State<DailyLocalNotifications> {
     );
 
     await reminderSettingsProvider.init();
+    debugPrint('roy93~ init');
 
     return reminderSettingsProvider;
   }
@@ -91,6 +92,8 @@ class _DailyLocalNotificationsState extends State<DailyLocalNotifications> {
         BuildContext context,
         AsyncSnapshot<ReminderSettingsProvider> snapshot,
       ) {
+        debugPrint('roy93~ snapshot.connectionState ${snapshot.connectionState}');
+        debugPrint('roy93~ snapshot.hasData ${snapshot.hasData}');
         if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
           return ChangeNotifierProvider<ReminderSettingsProvider>.value(
             value: snapshot.data!,

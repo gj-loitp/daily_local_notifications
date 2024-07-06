@@ -4,20 +4,59 @@ import 'package:flutter/material.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    home: MainScreen(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Daily Local Notifications',
+      title: 'MyApp',
       home: Scaffold(
+        backgroundColor: Colors.red,
         appBar: AppBar(
-          title: const Text('Daily Local Notifications'),
+          title: const Text('MyApp'),
+        ),
+        body: ElevatedButton(
+          onPressed: () {
+            debugPrint("roy93~ onPressed");
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MainScreen2()),
+            );
+          },
+          child: const Text('Go to Page 2'),
+        ),
+      ),
+    );
+  }
+}
+
+class MainScreen2 extends StatefulWidget {
+  const MainScreen2({super.key});
+
+  @override
+  State<MainScreen2> createState() => _MainScreenState2();
+}
+
+class _MainScreenState2 extends State<MainScreen2> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Page 2',
+      home: Scaffold(
+        backgroundColor: Colors.green,
+        appBar: AppBar(
+          title: const Text('Page 2'),
         ),
         body: DailyLocalNotifications(
           notificationConfig: const NotificationConfig(),
