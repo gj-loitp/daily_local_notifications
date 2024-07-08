@@ -1,6 +1,7 @@
 import 'package:daily_local_notifications/daily_local_notifications.dart';
 import 'package:flutter/material.dart';
 
+//xem vd o project KQXS cho ro hon
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
