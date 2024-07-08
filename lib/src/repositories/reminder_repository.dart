@@ -103,11 +103,13 @@ class ReminderRepository {
               notificationConfig.channelId,
               notificationConfig.channelName,
               channelDescription: notificationConfig.channelDescription,
+              importance: Importance.max,
+              priority: Priority.max,
             ),
           ),
           // deprecated
           // androidAllowWhileIdle: true,
-          androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+          androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
           uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
           matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
         );
